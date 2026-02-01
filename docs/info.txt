@@ -19,6 +19,26 @@ to import a function (like I did for CCSA) from a nested package:
 -> in the importing file this syntax now works: 
   -> from dir.filename import functionname
 -> make sure to "run" from the project-root: "PS C:\...\LangChain-Workspace>"
+
+this is not how it works in practice...-> env variable
+see: screenshot: where the API key lives
+1) PS Temp Terminal variable (disappears if terminal is closed) method:
+enter following in the terminal: (replace with real key)
+$env:ANTHROPIC_API_KEY="sk-ant-XXXXXXXXXXXXXXXX"
+
+check:
+echo $env:ANTHROPIC_API_KEY
+
+with terminal open running the demo should work, it'll use that env.variable at runtime
+
+2) PS Permanent env-variable method:
+enter following in the terminal: (replace with real key)
+setx ANTHROPIC_API_KEY "sk-ant-XXXXXXXXXXXXXXXX"
+
+check:
+close/open terminal, then:
+echo $env:ANTHROPIC_API_KEY
+
 ************************************************************************
 LangChain followed steps from docs:
 -----------------------------------
@@ -27,5 +47,66 @@ docs: https://docs.langchain.com/oss/python/langchain/overview
 skipped /overview (will come back later)
 followed /install
 followed /quickstart
+
+update:
+python -m pip install --upgrade pip
+
+installed(update if installed): ("python -m" -> install for active python version)("-U" -> update)
+python -m pip install -U langchain
+python -m pip install -U langchain-openai
+python -m pip install -U langchain-anthropic
+
+(for langChain_03.py)
+python -m pip install -U langgraph
+
+python -m pip install -U langchain-ollama
+
+useful LangChain modules:
+-------------------------
+pip install langchain-openai
+pip install langchain-community
+pip install langchain-chroma
+
+pip freeze | grep langchain
+
+----------------------
+note: LangChain is no longer 1 big module, it has a lot of modules that are required depending on use-case
+
+use-case ---> module
+
+Use OpenAI models	---> langchain-openai
+Load files / do RAG	---> langchain-community
+Build chains / prompts ---> langchain
+Use Anthropic ---> langchain-anthropic
+Use HuggingFace ---> langchain-huggingface
+Use Ollama ---> langchain-ollama
+
+supported models:
+https://docs.langchain.com/oss/python/integrations/providers/overview
+
+Ollama:
+https://reference.langchain.com/python/integrations/langchain_ollama/#langchain_ollama.ChatOllama
+----------------------
+from Lab2: (install cell)(ter info)
+
+%%capture
+!pip install --force-reinstall --no-cache-dir tenacity==8.2.3 --user
+!pip install "ibm-watsonx-ai==1.0.8" --user
+!pip install "ibm-watson-machine-learning==1.0.367" --user
+!pip install "langchain-ibm==0.1.7" --user
+!pip install "langchain-community==0.2.10" --user
+!pip install "langchain-experimental==0.0.62" --user
+!pip install "langchainhub==0.1.18" --user
+!pip install "langchain==0.2.11" --user
+!pip install "pypdf==4.2.0" --user
+!pip install "chromadb==0.4.24" --user
+-----------------------
+virtual environment(py) (research: venv)
+
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install langchain langchain-openai
+-----------------------
 
 ************************************************************************
