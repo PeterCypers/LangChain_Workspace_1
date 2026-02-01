@@ -1,0 +1,31 @@
+************************************************************************
+Claude(Anthropic)($5.00)
+-----------------
+to get API keys for anthropic, visit:
+https://console.anthropic.com/
+
+claude systems crashed while I was finalizing payment (but it went through)
+https://status.claude.com/
+
+dashboard(billing & keys)
+https://platform.claude.com/dashboard
+
+************************************************************************
+keeping keys secret: (keys stored locally with .gitignore)
+--------------------
+to import a function (like I did for CCSA) from a nested package:
+(...\Jaar_3 - Semester_1(backed up)\CCSA Herh\StudieWerk Examen(3de zit)\CCSA H1 dagelijkse oefening)
+-> add an empty "__init__.py" file in the same folder that you want to export a py-file's function
+-> in the importing file this syntax now works: 
+  -> from dir.filename import functionname
+-> make sure to "run" from the project-root: "PS C:\...\LangChain-Workspace>"
+************************************************************************
+LangChain followed steps from docs:
+-----------------------------------
+docs: https://docs.langchain.com/oss/python/langchain/overview
+
+skipped /overview (will come back later)
+followed /install
+followed /quickstart
+
+************************************************************************
