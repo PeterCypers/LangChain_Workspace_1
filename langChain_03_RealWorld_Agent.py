@@ -2,6 +2,14 @@
 ##                           BUILD A REAL WORLD AGENT                                    ##
 ##  https://docs.langchain.com/oss/python/langchain/quickstart#build-a-real-world-agent  ##
 ###########################################################################################
+######### Set-API-Env-Variable ##############
+from keys.anthropic_key import get_claude_key
+ANTHROPIC_KEY = get_claude_key()
+
+import os
+os.environ["ANTHROPIC_API_KEY"] = ANTHROPIC_KEY
+#############################################
+
 # 1) Detailed system prompts for better agent behavior
 SYSTEM_PROMPT = """You are an expert weather forecaster, who speaks in puns.
 

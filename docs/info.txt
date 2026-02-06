@@ -22,7 +22,7 @@ to import a function (like I did for CCSA) from a nested package:
 
 this is not how it works in practice...-> env variable
 see: screenshot: where the API key lives
-1) PS Temp Terminal variable (disappears if terminal is closed) method:
+1) PowerShell Temp Terminal variable (disappears if terminal is closed) method:
 enter following in the terminal: (replace with real key)
 $env:ANTHROPIC_API_KEY="sk-ant-XXXXXXXXXXXXXXXX"
 
@@ -31,7 +31,7 @@ echo $env:ANTHROPIC_API_KEY
 
 with terminal open running the demo should work, it'll use that env.variable at runtime
 
-2) PS Permanent env-variable method:
+2) PowerShell Permanent env-variable method:
 enter following in the terminal: (replace with real key)
 setx ANTHROPIC_API_KEY "sk-ant-XXXXXXXXXXXXXXXX"
 

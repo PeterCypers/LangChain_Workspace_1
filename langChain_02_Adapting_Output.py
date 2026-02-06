@@ -1,6 +1,13 @@
 ################################################################
 ##                         Adapting output                    ##
 ################################################################
+######### Set-API-Env-Variable ##############
+from keys.anthropic_key import get_claude_key
+ANTHROPIC_KEY = get_claude_key()
+
+import os
+os.environ["ANTHROPIC_API_KEY"] = ANTHROPIC_KEY
+#############################################
 
 from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage, AIMessage#, SystemMessage

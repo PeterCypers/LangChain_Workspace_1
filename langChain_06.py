@@ -5,11 +5,13 @@
 # Setting the env-variable in the .py-file, technically even better
 # so we don't need to set env-variable beforehand (and follows Course)
 
+######### Set-API-Env-Variable ##############
 from keys.anthropic_key import get_claude_key
 ANTHROPIC_KEY = get_claude_key()
 
 import os
 os.environ["ANTHROPIC_API_KEY"] = ANTHROPIC_KEY
+#############################################
 
 # check api-key
 def check_api_key():
