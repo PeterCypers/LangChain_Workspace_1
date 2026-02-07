@@ -29,12 +29,16 @@ os.environ["OPENAI_API_KEY"] = GPT_KEY
 # wiki quiet install would have been faster... -> python -m pip install -Uq wikipedia
 from langchain_community.retrievers import WikipediaRetriever
 
-retriever = WikipediaRetriever()
+retriever = WikipediaRetriever(
+    load_max_docs=5,
+    top_k_results=1,
+    doc_content_chars_max=1000
+)
 # https://python.langchain.com/api_reference/community/retrievers/langchain_community.retrievers.wikipedia.WikipediaRetriever.html#langchain-community-retrievers-wikipedia-wikipediaretriever
 
 # in comment: didn't work -> http 403
-docs = retriever.invoke("TOKYO GHOUL")
-print(docs[0].page_content[:400])
+# docs = retriever.invoke("TOKYO GHOUL")
+# print(docs[0].page_content[:400])
 
 from langchain_core.output_parsers import StrOutputParser  
 from langchain_core.prompts import ChatPromptTemplate  
@@ -58,6 +62,11 @@ chain = (
 chain.invoke(  
 "Who is the main character in `Tokyo Ghoul` and does he transform into a ghoul?"  
 )
+
+
+
+
+
 ##############################################################################
 # Amazon Kendra Retriever Example:
 # https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html
