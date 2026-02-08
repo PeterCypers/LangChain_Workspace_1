@@ -24,9 +24,10 @@ os.environ["OPENAI_API_KEY"] = GPT_KEY
 #############################################
 
 ##############################################################################
-# Wikipedia Retriever Example:
-# https://docs.langchain.com/oss/python/integrations/retrievers/wikipedia
-# wiki quiet install would have been faster... -> python -m pip install -Uq wikipedia
+##                     Wikipedia Retriever Example:                         ##
+## https://docs.langchain.com/oss/python/integrations/retrievers/wikipedia  ##
+##############################################################################
+# wiki quiet install may have been faster... -> python -m pip install -Uq wikipedia
 from langchain_community.retrievers import WikipediaRetriever
 
 retriever = WikipediaRetriever(
@@ -63,7 +64,7 @@ chain.invoke(
 "Who is the main character in `Tokyo Ghoul` and does he transform into a ghoul?"  
 )
 
-
+# IMPORTANT: the Wiki part of this file may work. But I can't test it because I don't have GPT-credits
 
 
 
